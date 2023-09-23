@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BottomNavigationSample</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Files</string>
+    <string name="title_notifications">Profile</string>
+    <string name="EditedTextBoxHint">在这里键入你的笔记</string>
+</resources>
