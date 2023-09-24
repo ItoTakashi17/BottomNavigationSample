@@ -34,11 +34,11 @@ class HomeFragment : Fragment() {
         // Fragment的视图通过Binding的root元素设置
         val root: View = binding.root
 
-        val videoView: VideoView = binding.videoView
-        homeViewModel.currentVideo.observe(viewLifecycleOwner) { uri ->
-            videoView.setVideoURI(uri)
-            videoView.start()
-        }
+//        val videoView: VideoView = binding.videoView
+//        homeViewModel.currentVideo.observe(viewLifecycleOwner) { uri ->
+//            videoView.setVideoURI(uri)
+//            videoView.start()
+//        }
 
         return root
     }

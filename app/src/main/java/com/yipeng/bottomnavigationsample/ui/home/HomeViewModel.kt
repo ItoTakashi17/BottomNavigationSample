@@ -8,10 +8,10 @@ import com.yipeng.bottomnavigationsample.R
 
 class HomeViewModel : ViewModel() {
 
-    private val _currentVideo = MutableLiveData<Uri>()
-    init {
-        _currentVideo.value = Uri.parse("android.resource://com.yipeng.bottomnavigationsample/${R.raw.shanghai}")
-    }
-    // 添加只读的LiveData封装
-    val currentVideo: LiveData<Uri> = _currentVideo
+//    private val _currentVideo = MutableLiveData<Uri>()
+//    init {
+//        _currentVideo.value = Uri.parse("android.resource://com.yipeng.bottomnavigationsample/${R.raw.shanghai}")
+//    }
+//    // 添加只读的LiveData封装
+//    val currentVideo: LiveData<Uri> = _currentVideo
 }

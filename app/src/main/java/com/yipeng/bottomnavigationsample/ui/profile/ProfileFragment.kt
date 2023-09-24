@@ -22,6 +22,7 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         val profileViewModel =
             ViewModelProvider(this).get(ProfileViewModel::class.java)
 
