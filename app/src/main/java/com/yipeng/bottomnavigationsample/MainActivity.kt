@@ -1,9 +1,15 @@
 package com.yipeng.bottomnavigationsample
 
+import android.content.Intent
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.os.Environment
+import android.provider.Settings
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -14,6 +20,9 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){}
+
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.navView
+//        val navView = findViewById<BottomNavigationView>(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
@@ -35,6 +45,23 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_files, R.id.navigation_profile
             )
         )
+
+//         navView.setOnItemSelectedListener{ item ->
+//            when (item.itemId) {
+//                R.id.navigation_files -> {
+//                    if (Environment.isExternalStorageEmulated ()){
+//                        // 没有权限,申请
+//                        val intent = Intent()
+//                        intent.action = Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION
+//                        intent.data = Uri.parse("package:$packageName")
+//                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+//
+//                        launcher.launch(intent)
+//                    }
+//                }
+//            }
+//            true
+//        }
 
         // 关联ActionBar、NavController和BottomNavigationView
         // 让系统可以自动处理它们之间的交互和同步。
